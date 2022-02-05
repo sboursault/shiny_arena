@@ -2,6 +2,8 @@ use bevy::prelude::*;
 mod player;
 mod components;
 mod camera;
+mod sh_menu;
+use sh_menu::MainMenuPlugin;
 
 
 // setup system
@@ -49,8 +51,8 @@ fn main() {
         .add_state(AppState::MainMenu)
         .add_plugins(DefaultPlugins)
         .add_plugin(player::PlayerPlugin)
+        .add_plugin(MainMenuPlugin)
         .add_system(main_menu_controls.system())
-        
         .run();
 }
 
